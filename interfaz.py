@@ -41,7 +41,7 @@ def main():
     style.map("TButton", background=[("active", "#c0e7ff")])
 
     window_width = 1000
-    window_height = 600
+    window_height = 620
     screen_width = root.winfo_screenwidth()
     screen_height = root.winfo_screenheight()
     x_cordinate = int((screen_width/2) - (window_width/2))
@@ -302,4 +302,7 @@ def main():
     ttk.Button(frame_seleccion, text="🖼️ Seleccionar Imagen", command=seleccionar_imagen).pack(side="left", padx=5)
     ttk.Button(frame_seleccion, text="✍️ Seleccionar carpeta de firmas", command=seleccionar_carpeta_firmas).pack(side="left", padx=5)
 
+    frame_volver = tk.Frame(root, bg="white")
+    frame_volver.grid(row=10, column=0, columnspan=3, pady=20)
+    ttk.Button(frame_volver, text="🔙 Volver al Menú Principal", command=lambda: [root.destroy(), __import__('main').main()]).pack()
     root.mainloop()
